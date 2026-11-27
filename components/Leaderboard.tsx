@@ -1,4 +1,4 @@
-import { Trader, flagEmoji } from "@/lib/data";
+import { Trader } from "@/lib/data";
 
 export default function Leaderboard({ rows, compact = false, highlight }: { rows: Trader[]; compact?: boolean; highlight?: string }) {
   return (
@@ -23,7 +23,7 @@ export default function Leaderboard({ rows, compact = false, highlight }: { rows
                 <div className="who">
                   <span className="avatar">{t.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}</span>
                   <div>
-                    {t.name} <span aria-label={t.country}>{flagEmoji(t.country)}</span>{" "}
+                    {t.name} <span className="cc">{t.country}</span>{" "}
                     <span className={`tier tier-${t.tier}`}>{t.tier}</span>
                     <small>@{t.handle}</small>
                   </div>

@@ -344,3 +344,4 @@ input, select, textarea { font: inherit; color: inherit; }
   .tour-dock { right: 16px; left: 16px; bottom: 16px; width: auto; }
   .tour-img { height: 110px; }
 }
+.cc { font-size: 11px; color: var(--dim); border: 1px solid var(--line-2); border-radius: 5px; padding: 1px 5px; margin-right: 2px; }

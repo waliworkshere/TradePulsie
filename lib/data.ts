@@ -155,7 +155,7 @@ export const tiers: Tier[] = [
 export const posts = [
   { id: 1, author: "Ama Owusu", handle: "ama.fx", tier: "VIP", time: "12 min ago", title: "How I stayed under 4% drawdown in the Futures Cup", body: "Cut my size in half after two losses in a row. Boring, but I'm still in the top 3.", replies: 23, likes: 112, tag: "Strategy" },
   { id: 2, author: "TradePulsie", handle: "team", tier: "VIP", time: "1 h ago", title: "January FX Sprint registration is open", body: "25k demo accounts, $2,500 prize pool, and Gold membership for the top 3. Register from your dashboard.", replies: 41, likes: 260, tag: "Announcement" },
-  { id: 3, author: "Yaw Boateng", handle: "yawtrades", tier: "Free", time: "3 h ago", title: "First green week ever 🎉", body: "Finished the Risk Management course last month. Journaling every trade has changed everything.", replies: 17, likes: 89, tag: "Wins" },
+  { id: 3, author: "Yaw Boateng", handle: "yawtrades", tier: "Free", time: "3 h ago", title: "First green week ever", body: "Finished the Risk Management course last month. Journaling every trade has changed everything.", replies: 17, likes: 89, tag: "Wins" },
   { id: 4, author: "Daniel Okafor", handle: "dokafor", tier: "Silver", time: "5 h ago", title: "NQ or ES for a $10k account?", body: "Micro contracts on both. Which one do you find cleaner during the New York open?", replies: 34, likes: 46, tag: "Question" },
 ];
 
