@@ -24,7 +24,11 @@ export default function Store() {
       <div className="grid-3">
         {products.map((p, i) => (
           <div key={p.id} className="panel panel-pad product">
-            <div className={`product-art art-${i % 3}`}><img src="/mark.png" alt="" /></div>
+            {p.img ? (
+              <div className="product-art photo"><img src={p.img} alt="" loading="lazy" /></div>
+            ) : (
+              <div className={`product-art art-${i % 3}`}><img src="/mark.png" alt="" /></div>
+            )}
             <span className="dim" style={{ fontSize: 13 }}>{p.type}</span>
             <h3 className="h3" style={{ marginTop: 4 }}>{p.name}</h3>
             <p className="muted" style={{ margin: "0 0 16px", fontSize: 14.5 }}>{p.note}</p>

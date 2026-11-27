@@ -18,7 +18,7 @@ export default function Academy() {
 
       {active && (
         <div className="panel player">
-          <div className="video">
+          <div className="video" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url(/photos/academy-video.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
             <div className="video-inner">
               <button className="play" aria-label="Play lesson" onClick={() => show("Lesson playback is enabled once videos are uploaded in the admin panel.")}>▶</button>
               <div className="video-cap">
@@ -50,7 +50,7 @@ export default function Academy() {
       <div className="grid-3">
         {list.map((c) => (
           <div key={c.id} className="panel panel-pad course-card">
-            <div className="course-thumb"><span>{c.level}</span></div>
+            <div className="course-thumb"><img src={c.img} alt="" loading="lazy" /><span>{c.level}</span></div>
             <h3 className="h3">{c.title}</h3>
             <p className="muted" style={{ margin: "0 0 14px", fontSize: 14.5 }}>{c.blurb}</p>
             {c.progress ? (

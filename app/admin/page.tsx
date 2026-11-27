@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { flags as seedFlags, payments, competitions, leaderboard, courses, products } from "@/lib/data";
 import { LineChart } from "@/components/Charts";
 import { useToast } from "@/components/Toast";
@@ -10,6 +10,18 @@ export default function Admin() {
   const [tab, setTab] = useState<(typeof sections)[number]>("Overview");
   const [flags, setFlags] = useState(seedFlags);
   const { show, node } = useToast();
+  useEffect(() => {
+    let last = "";
+    const sync = () => {
+      const q = window.location.search;
+      if (q === last) return;
+      last = q;
+      if (new URLSearchParams(q).get("tab") === "fair") setTab("Fair play");
+    };
+    sync();
+    const t = setInterval(sync, 400);
+    return () => clearInterval(t);
+  }, []);
   const resolve = (id: string, action: string) => { setFlags(flags.filter((f) => f.id !== id)); show(`${id}: ${action}`); };
   const signups = [40, 52, 48, 61, 75, 70, 88, 96, 110, 104, 131, 150, 162, 171];
 

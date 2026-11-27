@@ -13,6 +13,7 @@ export default function Competitions() {
       <div className="grid-2" style={{ paddingBottom: 40 }}>
         {competitions.map((c) => (
           <Link key={c.id} href={`/competitions/${c.id}`} className="panel panel-pad comp-card">
+            <div className="comp-photo" style={{ backgroundImage: `url(/photos/${["competition", "product-indicator", "course-futures", "coins"][competitions.indexOf(c) % 4]}.jpg)` }} />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span className={`pill ${c.status === "Live" ? "live" : c.status === "Finished" ? "" : "warn"}`}>{c.status}</span>
               <span className="dim" style={{ fontSize: 13.5 }}>{c.starts} – {c.ends}</span>

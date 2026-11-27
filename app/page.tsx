@@ -88,7 +88,7 @@ export default function Home() {
           <div className="grid-3" style={{ marginTop: 32 }}>
             {courses.slice(0, 3).map((c) => (
               <Link href="/academy" key={c.id} className="panel panel-pad course-card">
-                <div className="course-thumb"><span>{c.level}</span></div>
+                <div className="course-thumb"><img src={c.img} alt="" loading="lazy" /><span>{c.level}</span></div>
                 <h3 className="h3">{c.title}</h3>
                 <p className="muted" style={{ margin: "0 0 14px", fontSize: 14.5 }}>{c.blurb}</p>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13.5 }}>
@@ -136,7 +136,8 @@ export default function Home() {
             <div style={{ display: "grid", gap: 10, marginTop: 18 }}>
               {products.slice(0, 4).map((p) => (
                 <div key={p.id} className="row-item">
-                  <div><b style={{ fontWeight: 500 }}>{p.name}</b><div className="dim" style={{ fontSize: 13 }}>{p.type}</div></div>
+                  {p.img && <img className="row-thumb" src={p.img} alt="" loading="lazy" />}
+                  <div style={{ flex: 1 }}><b style={{ fontWeight: 500 }}>{p.name}</b><div className="dim" style={{ fontSize: 13 }}>{p.type}</div></div>
                   <b>${p.price}</b>
                 </div>
               ))}
@@ -146,12 +147,34 @@ export default function Home() {
           <div className="panel panel-pad">
             <h2 className="h2 display" style={{ fontSize: 28 }}>Live sessions and a real community</h2>
             <p className="muted">Trade alongside Joseph in live sessions, share your wins, and ask questions without leaving the site.</p>
-            <div className="live-session">
+            <div className="live-session"><img className="ls-photo" src="/photos/live-session.jpg" alt="Live trading session" loading="lazy" />
               <span className="pill live">Live session · Thursday 15:30 GMT</span>
               <h3 className="h3" style={{ marginTop: 12 }}>New York open: trading NQ with a 1% risk rule</h3>
               <p className="dim" style={{ margin: 0, fontSize: 14 }}>Gold and VIP members · 312 reminders set</p>
             </div>
             <Link href="/community" className="btn btn-ghost" style={{ marginTop: 18 }}>Join the community</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* BUILT BY A TRADER */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="panel trader-band">
+            <img src="/photos/trader.jpg" alt="A trader celebrating a winning trade" loading="lazy" />
+            <div className="tb-text">
+              <h2 className="h2 display" style={{ fontSize: 30 }}>Built by a trader who remembers starting out</h2>
+              <p className="muted">
+                TradePulsie was started by Joseph Jaden, a forex and futures trader who now trades with prop firms. Getting started was
+                expensive and lonely, so TradePulsie gives new traders what he wished he'd had: free competitions, honest education and
+                a community that wants you to win.
+              </p>
+              <div className="tb-stats">
+                <div><b className="display">Free</b><span className="dim">entry to every monthly competition</span></div>
+                <div><b className="display">Real</b><span className="dim">broker demo accounts, not simulators</span></div>
+                <div><b className="display">Funded</b><span className="dim">accounts and cash for top traders</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

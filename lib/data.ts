@@ -108,15 +108,16 @@ export type Course = {
   progress?: number;
   instructor: string;
   blurb: string;
+  img: string;
 };
 
 export const courses: Course[] = [
-  { id: "trading-foundations", title: "Trading foundations", level: "Beginner", lessons: 18, hours: 4.5, price: 0, progress: 72, instructor: "Joseph Jaden", blurb: "Markets, order types, leverage and your first trading plan." },
-  { id: "risk-management", title: "Risk management that keeps you funded", level: "Beginner", lessons: 12, hours: 3, price: 0, progress: 30, instructor: "Joseph Jaden", blurb: "Position sizing, daily loss limits and surviving a drawdown." },
-  { id: "futures-playbook", title: "The futures playbook", level: "Intermediate", lessons: 24, hours: 7, price: 79, instructor: "Joseph Jaden", blurb: "ES, NQ and CL: sessions, contract specs and setups that work." },
-  { id: "prop-firm-pass", title: "Passing prop firm challenges", level: "Intermediate", lessons: 16, hours: 5, price: 99, instructor: "Joseph Jaden", blurb: "The exact rules, routines and mindset behind real prop payouts." },
-  { id: "price-action-mastery", title: "Price action mastery", level: "Advanced", lessons: 30, hours: 9, price: 149, instructor: "Guest mentor", blurb: "Market structure, liquidity and entries without indicators." },
-  { id: "trading-psychology", title: "Trading psychology", level: "Intermediate", lessons: 10, hours: 2.5, price: 49, instructor: "Guest mentor", blurb: "Discipline, journaling and handling losing streaks." },
+  { id: "trading-foundations", title: "Trading foundations", level: "Beginner", lessons: 18, hours: 4.5, price: 0, progress: 72, instructor: "Joseph Jaden", blurb: "Markets, order types, leverage and your first trading plan.", img: "/photos/course-foundations.jpg" },
+  { id: "risk-management", title: "Risk management that keeps you funded", level: "Beginner", lessons: 12, hours: 3, price: 0, progress: 30, instructor: "Joseph Jaden", blurb: "Position sizing, daily loss limits and surviving a drawdown.", img: "/photos/course-risk.jpg" },
+  { id: "futures-playbook", title: "The futures playbook", level: "Intermediate", lessons: 24, hours: 7, price: 79, instructor: "Joseph Jaden", blurb: "ES, NQ and CL: sessions, contract specs and setups that work.", img: "/photos/course-futures.jpg" },
+  { id: "prop-firm-pass", title: "Passing prop firm challenges", level: "Intermediate", lessons: 16, hours: 5, price: 99, instructor: "Joseph Jaden", blurb: "The exact rules, routines and mindset behind real prop payouts.", img: "/photos/course-prop.jpg" },
+  { id: "price-action-mastery", title: "Price action mastery", level: "Advanced", lessons: 30, hours: 9, price: 149, instructor: "Guest mentor", blurb: "Market structure, liquidity and entries without indicators.", img: "/photos/course-price-action.jpg" },
+  { id: "trading-psychology", title: "Trading psychology", level: "Intermediate", lessons: 10, hours: 2.5, price: 49, instructor: "Guest mentor", blurb: "Discipline, journaling and handling losing streaks.", img: "/photos/course-psychology.jpg" },
 ];
 
 export type Product = {
@@ -125,13 +126,14 @@ export type Product = {
   type: string;
   price: number;
   note: string;
+  img?: string;
 };
 
 export const products: Product[] = [
-  { id: "journal-pro", name: "TradePulsie Journal Pro", type: "Digital tool", price: 19, note: "Spreadsheet + Notion journal with auto stats" },
-  { id: "session-indicator", name: "Session Pulse indicator", type: "Indicator · MT5 / TradingView", price: 39, note: "Marks London, New York and Asia sessions" },
-  { id: "risk-calculator", name: "Position size calculator", type: "Digital tool", price: 9, note: "Lot size from account, risk % and stop" },
-  { id: "ebook-futures", name: "Futures for beginners", type: "Ebook · PDF", price: 15, note: "120 pages, written for first-time futures traders" },
+  { id: "journal-pro", name: "TradePulsie Journal Pro", type: "Digital tool", price: 19, note: "Spreadsheet + Notion journal with auto stats", img: "/photos/product-journal.jpg" },
+  { id: "session-indicator", name: "Session Pulse indicator", type: "Indicator · MT5 / TradingView", price: 39, note: "Marks London, New York and Asia sessions", img: "/photos/product-indicator.jpg" },
+  { id: "risk-calculator", name: "Position size calculator", type: "Digital tool", price: 9, note: "Lot size from account, risk % and stop", img: "/photos/product-calculator.jpg" },
+  { id: "ebook-futures", name: "Futures for beginners", type: "Ebook · PDF", price: 15, note: "120 pages, written for first-time futures traders", img: "/photos/product-ebook.jpg" },
   { id: "printed-journal", name: "Printed trading journal", type: "Merchandise", price: 25, note: "A5 hardcover, 180 trade pages" },
   { id: "hoodie", name: "TradePulsie hoodie", type: "Merchandise", price: 45, note: "Black heavyweight cotton, green chest logo" },
 ];

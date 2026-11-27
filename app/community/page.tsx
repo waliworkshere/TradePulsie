@@ -11,9 +11,12 @@ export default function Community() {
   const list = posts.filter((p) => tag === "All" || p.tag === tag);
   return (
     <div className="wrap" style={{ paddingBottom: 40 }}>
-      <div className="page-head">
-        <h1 className="h1 display">Community</h1>
-        <p className="lead">Ask questions, share trades and celebrate green weeks with traders on the same path as you.</p>
+      <div className="page-head photo-head">
+        <div>
+          <h1 className="h1 display">Community</h1>
+          <p className="lead">Ask questions, share trades and celebrate green weeks with traders on the same path as you.</p>
+        </div>
+        <img src="/photos/community.jpg" alt="Traders reviewing charts together" />
       </div>
       <div className="comm">
         <div>
@@ -55,6 +58,7 @@ export default function Community() {
         </div>
         <aside style={{ display: "grid", gap: 16, alignContent: "start" }}>
           <div className="panel panel-pad">
+            <img src="/photos/live-session.jpg" alt="Live trading session" className="aside-photo" loading="lazy" />
             <span className="pill live">Live Thursday 15:30 GMT</span>
             <h3 className="h3" style={{ marginTop: 12 }}>New York open with Joseph</h3>
             <p className="muted" style={{ margin: "0 0 14px", fontSize: 14 }}>Live NQ trading with a 1% risk rule. Gold and VIP members.</p>

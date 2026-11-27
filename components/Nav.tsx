@@ -19,7 +19,8 @@ export default function Nav() {
   return (
     <>
       <div className="demo-banner">
-        <b>Preview build</b> for TradePulsie, built by FullCircleWali. Data shown is sample data until the broker API is connected.
+        <b>Preview build</b> for TradePulsie, built by FullCircleWali. Data shown is sample data.{" "}
+        <button className="banner-tour" onClick={() => window.dispatchEvent(new Event("tp-open-tour"))}>Take the tour</button>
       </div>
       <header className="nav">
         <div className="wrap">

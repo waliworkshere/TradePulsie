@@ -298,3 +298,49 @@ input, select, textarea { font: inherit; color: inherit; }
   .admin-nav { position: static; grid-auto-flow: column; overflow-x: auto; }
   .comp-meta { grid-template-columns: 1fr 1fr; }
 }
+
+/* Photos */
+.course-thumb { position: relative; overflow: hidden; height: 150px; }
+.course-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) brightness(.8); }
+.course-thumb span { position: relative; }
+.product-art.photo { overflow: hidden; position: relative; }
+.product-art.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: normal; opacity: 1; filter: brightness(.85); }
+.ls-photo { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 14px; display: block; }
+.row-thumb { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; margin-right: 12px; flex: none; }
+.trader-band { display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; }
+.trader-band > img { width: 100%; height: 100%; min-height: 340px; object-fit: cover; display: block; }
+.tb-text { padding: 36px; }
+.tb-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; }
+.tb-stats b { display: block; font-size: 20px; color: var(--pulse); }
+.tb-stats span { font-size: 13px; }
+.aside-photo { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; display: block; }
+.photo-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+.photo-head img { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); }
+.comp-photo { height: 120px; margin: -24px -24px 20px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background-size: cover; background-position: center; filter: brightness(.75); }
+@media (max-width: 960px) {
+  .trader-band, .photo-head { grid-template-columns: 1fr; }
+  .tb-stats { grid-template-columns: 1fr; }
+}
+
+/* Tour */
+.banner-tour { background: none; border: none; color: var(--pulse); text-decoration: underline; text-underline-offset: 3px; padding: 0; font-size: 13px; font-weight: 600; }
+.tour-dim { position: fixed; inset: 0; background: #000; opacity: .72; z-index: 200; }
+.tour { position: fixed; z-index: 201; background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px -10px #000; width: min(440px, calc(100vw - 32px)); animation: tourIn .25s ease-out; }
+.tour-center { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.tour-dock { right: 24px; bottom: 24px; }
+@keyframes tourIn { from { opacity: 0; } }
+.tour-img { height: 150px; background-size: cover; background-position: center; position: relative; border-bottom: 1px solid var(--line); }
+.tour-count { position: absolute; left: 14px; top: 14px; background: #000; color: var(--pulse); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--pulse-deep); }
+.tour-body { padding: 20px 22px 18px; }
+.tour-body h2 { font-size: 21px; margin: 0 0 8px; }
+.tour-body p { color: var(--muted); margin: 0 0 12px; font-size: 14.5px; }
+.tour-dots { display: flex; gap: 6px; margin-bottom: 16px; }
+.tour-dots button { width: 7px; height: 7px; border-radius: 50%; border: none; background: var(--line-2); padding: 0; }
+.tour-dots button.on { background: var(--pulse); width: 22px; border-radius: 6px; }
+.tour-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.tour-skip { background: none; border: none; color: var(--dim); font-size: 13.5px; padding: 6px 0; }
+.tour-skip:hover { color: var(--text); }
+@media (max-width: 640px) {
+  .tour-dock { right: 16px; left: 16px; bottom: 16px; width: auto; }
+  .tour-img { height: 110px; }
+}
