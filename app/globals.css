@@ -37,7 +37,7 @@ input, select, textarea { font: inherit; color: inherit; }
 ::selection { background: var(--pulse); color: #000; }
 :focus-visible { outline: 2px solid var(--pulse); outline-offset: 3px; border-radius: 6px; }
 
-.display { font-family: var(--font-display), sans-serif; letter-spacing: -0.02em; }
+.display { font-family: var(--font-display), sans-serif; letter-spacing: -0.035em; font-weight: 700; }
 
 /* Grid backdrop with a soft glow, inspired by the client's reference site */
 .backdrop {
@@ -78,8 +78,8 @@ input, select, textarea { font: inherit; color: inherit; }
 /* Common */
 .section { padding: 96px 0; }
 .section-tight { padding: 56px 0; }
-.h1 { font-size: clamp(40px, 6.4vw, 82px); line-height: 1.02; margin: 0; font-weight: 700; }
-.h2 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.1; margin: 0 0 14px; font-weight: 600; }
+.h1 { font-size: clamp(42px, 6.8vw, 88px); line-height: 1; margin: 0; font-weight: 800; letter-spacing: -0.045em; }
+.h2 { font-size: clamp(28px, 3.6vw, 46px); line-height: 1.08; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.035em; }
 .h3 { font-size: 19px; margin: 0 0 6px; font-weight: 600; }
 .lead { font-size: 18.5px; color: var(--muted); max-width: 60ch; margin: 0; }
 .muted { color: var(--muted); }
@@ -302,7 +302,9 @@ input, select, textarea { font: inherit; color: inherit; }
 .ls-photo { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 14px; display: block; }
 .row-thumb { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; margin-right: 12px; flex: none; }
 .trader-band { display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; }
-.trader-band > img { width: 100%; height: 100%; min-height: 340px; object-fit: cover; display: block; }
+.trader-band { align-items: stretch; }
+.trader-band > img { width: 100%; height: 100%; min-height: 340px; max-height: 420px; object-fit: cover; object-position: center 22%; display: block; }
+.tb-text { align-self: center; }
 .tb-text { padding: 36px; }
 .tb-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; }
 .tb-stats b { display: block; font-size: 20px; color: var(--pulse); }

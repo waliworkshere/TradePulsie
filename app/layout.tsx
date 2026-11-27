@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Unbounded, IBM_Plex_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Tour from "@/components/Tour";
 
-const display = Unbounded({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-display" });
-const body = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
+const display = Inter({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display" });
+const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
 export const metadata: Metadata = {
   title: "TradePulsie: free trading competitions, academy and community",
