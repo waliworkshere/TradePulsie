@@ -17,7 +17,7 @@ export default function Leaderboard({ rows, compact = false, highlight }: { rows
         </thead>
         <tbody>
           {rows.map((t) => (
-            <tr key={t.handle} style={t.handle === highlight ? { background: "rgba(62,224,90,.07)" } : undefined}>
+            <tr key={t.handle} style={t.handle === highlight ? { background: "rgba(255,255,255,.06)" } : undefined}>
               <td><span className={`rank-badge rank-${t.rank}`}>{t.rank}</span></td>
               <td>
                 <div className="who">

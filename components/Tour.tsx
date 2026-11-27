@@ -80,10 +80,16 @@ export default function Tour() {
   useEffect(() => {
     let done = false;
     try { done = localStorage.getItem(KEY) === "1"; } catch {}
-    if (!done) setI(0);
+    let introSeen = false;
+    try { introSeen = sessionStorage.getItem("tp-intro") === "1"; } catch {}
+    const onIntro = () => { if (!done) setTimeout(() => setI(0), 4800); };
+    if (!done) {
+      if (window.location.pathname === "/" && !introSeen) window.addEventListener("tp-intro-done", onIntro, { once: true });
+      else setI(0);
+    }
     const open = () => { setI(0); router.push("/"); };
     window.addEventListener("tp-open-tour", open);
-    return () => window.removeEventListener("tp-open-tour", open);
+    return () => { window.removeEventListener("tp-open-tour", open); window.removeEventListener("tp-intro-done", onIntro); };
   }, [router]);
 
   useEffect(() => {

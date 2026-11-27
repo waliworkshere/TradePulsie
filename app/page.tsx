@@ -1,5 +1,6 @@
 import Link from "next/link";
-import PulseCanvas from "@/components/PulseCanvas";
+import HeroScene from "@/components/HeroScene";
+import { IntroOverlay, TypedHeadline } from "@/components/HeroIntro";
 import Leaderboard from "@/components/Leaderboard";
 import Countdown from "@/components/Countdown";
 import { leaderboard, competitions, courses, tiers, products } from "@/lib/data";
@@ -9,22 +10,30 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
+      <IntroOverlay />
       <section className="hero">
+        <HeroScene />
+        <div className="hero-fade" aria-hidden />
         <div className="wrap hero-inner">
-          <span className="pill live">December Futures Cup is live · 1,284 traders</span>
-          <h1 className="h1 display hero-title">
-            Trade free.<br />Climb the board.<br />Get funded.
-          </h1>
-          <p className="lead">
-            Monthly trading competitions on real broker demo accounts, with no entry fee. Learn from traders who get paid by
-            prop firms, and turn your results into a funded account.
-          </p>
-          <div className="hero-cta">
-            <Link href="/register" className="btn btn-pulse">Join the next competition</Link>
-            <Link href="/competitions/december-futures-cup" className="btn btn-ghost">See the live leaderboard</Link>
+          <div className="hero-copy">
+            <span className="pill live reveal r1">December Futures Cup is live · 1,284 traders</span>
+            <TypedHeadline />
+            <p className="lead reveal r2">
+              Monthly trading competitions on real broker demo accounts, with no entry fee. Learn from traders who get paid by
+              prop firms, and turn your results into a funded account.
+            </p>
+            <div className="hero-cta reveal r3">
+              <Link href="/register" className="btn btn-pulse">Join the next competition</Link>
+              <Link href="/competitions/december-futures-cup" className="btn btn-ghost">See the live leaderboard</Link>
+            </div>
+          </div>
+          <div className="hero-stats">
+            <div className="hstat reveal r2"><b className="display">$0</b><span>to enter any competition</span></div>
+            <div className="hstat reveal r3"><b className="display">$5,000</b><span>funded account up for grabs this month</span></div>
+            <div className="hstat reveal r4"><b className="display">1,284</b><span>traders competing right now</span></div>
+            <div className="hstat reveal r5"><b className="display">MT5</b><span>and Match-Trader demo accounts</span></div>
           </div>
         </div>
-        <div className="hero-canvas"><PulseCanvas /></div>
       </section>
 
       {/* LIVE COMPETITION */}
@@ -55,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS — a real sequence */}
-      <section className="section">
+      <section className="section section-light">
         <div className="wrap">
           <h2 className="h2 display" style={{ maxWidth: 640 }}>From sign-up to funded in four steps</h2>
           <div className="steps">
@@ -76,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* ACADEMY */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section">
         <div className="wrap">
           <div className="split-head">
             <div>
@@ -201,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section section-light" style={{ marginTop: 40 }}>
         <div className="wrap cta">
           <h2 className="h1 display" style={{ fontSize: "clamp(34px,5vw,64px)" }}>The January FX Sprint opens on 5 January.</h2>
           <p className="lead" style={{ margin: "18px auto 28px" }}>Create your free account now and you'll get your demo account the day it starts.</p>

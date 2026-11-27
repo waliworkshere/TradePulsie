@@ -1,6 +1,6 @@
 type LineProps = { data: number[]; height?: number; stroke?: string; fill?: boolean; showAxis?: boolean };
 
-export function LineChart({ data, height = 220, stroke = "#3ee05a", fill = true, showAxis = true }: LineProps) {
+export function LineChart({ data, height = 220, stroke = "#ffffff", fill = true, showAxis = true }: LineProps) {
   const w = 800;
   const h = height;
   const pad = { l: showAxis ? 56 : 4, r: 8, t: 10, b: showAxis ? 24 : 4 };
@@ -23,8 +23,8 @@ export function LineChart({ data, height = 220, stroke = "#3ee05a", fill = true,
       {showAxis &&
         ticks.map((t, i) => (
           <g key={i}>
-            <line x1={pad.l} x2={w - pad.r} y1={y(t)} y2={y(t)} stroke="#1b2a1f" strokeDasharray="3 5" />
-            <text x={pad.l - 8} y={y(t) + 4} textAnchor="end" fontSize="11" fill="#5d6b61">
+            <line x1={pad.l} x2={w - pad.r} y1={y(t)} y2={y(t)} stroke="#262626" strokeDasharray="3 5" />
+            <text x={pad.l - 8} y={y(t) + 4} textAnchor="end" fontSize="11" fill="#666666">
               ${Math.round(t).toLocaleString()}
             </text>
           </g>
@@ -36,7 +36,7 @@ export function LineChart({ data, height = 220, stroke = "#3ee05a", fill = true,
 }
 
 export function Sparkline({ data, up = true }: { data: number[]; up?: boolean }) {
-  return <LineChart data={data} height={42} stroke={up ? "#3ee05a" : "#ff5468"} fill={false} showAxis={false} />;
+  return <LineChart data={data} height={42} stroke={up ? "#ffffff" : "#ff5468"} fill={false} showAxis={false} />;
 }
 
 export function Donut({ value, label }: { value: number; label: string }) {
@@ -44,11 +44,11 @@ export function Donut({ value, label }: { value: number; label: string }) {
   const c = 2 * Math.PI * r;
   return (
     <svg viewBox="0 0 110 110" width="110" height="110" role="img" aria-label={`${label} ${value}%`}>
-      <circle cx="55" cy="55" r={r} fill="none" stroke="#1b2a1f" strokeWidth="10" />
-      <circle cx="55" cy="55" r={r} fill="none" stroke="#3ee05a" strokeWidth="10" strokeLinecap="round"
+      <circle cx="55" cy="55" r={r} fill="none" stroke="#262626" strokeWidth="10" />
+      <circle cx="55" cy="55" r={r} fill="none" stroke="#ffffff" strokeWidth="10" strokeLinecap="round"
         strokeDasharray={`${(value / 100) * c} ${c}`} transform="rotate(-90 55 55)" />
-      <text x="55" y="58" textAnchor="middle" fontSize="20" fontWeight="600" fill="#e6ebe7" fontFamily="var(--font-display)">{value}%</text>
-      <text x="55" y="76" textAnchor="middle" fontSize="10" fill="#5d6b61">{label}</text>
+      <text x="55" y="58" textAnchor="middle" fontSize="20" fontWeight="600" fill="#f2f2f2" fontFamily="var(--font-display)">{value}%</text>
+      <text x="55" y="76" textAnchor="middle" fontSize="10" fill="#666666">{label}</text>
     </svg>
   );
 }
@@ -59,7 +59,7 @@ export function Bars({ data, labels }: { data: number[]; labels: string[] }) {
     <div style={{ display: "flex", alignItems: "flex-end", gap: 10, height: 150 }}>
       {data.map((v, i) => (
         <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-          <div style={{ width: "100%", height: `${(Math.abs(v) / max) * 120}px`, background: v >= 0 ? "#3ee05a" : "#ff5468", borderRadius: 6, opacity: 0.9 }} title={`$${v}`} />
+          <div style={{ width: "100%", height: `${(Math.abs(v) / max) * 120}px`, background: v >= 0 ? "#e6e6e6" : "#ff5468", borderRadius: 6, opacity: 0.9 }} title={`$${v}`} />
           <span style={{ fontSize: 11.5, color: "#5d6b61" }}>{labels[i]}</span>
         </div>
       ))}
