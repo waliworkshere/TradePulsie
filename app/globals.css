@@ -345,3 +345,57 @@ input, select, textarea { font: inherit; color: inherit; }
   .tour-img { height: 110px; }
 }
 .cc { font-size: 11px; color: var(--dim); border: 1px solid var(--line-2); border-radius: 5px; padding: 1px 5px; margin-right: 2px; }
+
+/* Mobile polish */
+.m-only { display: none !important; }
+.live-card > *, .dash-grid > *, .comm > *, .admin > *, .comp-top > *, .grid-2 > *, .grid-3 > *, .grid-4 > *, .player > *, .trader-band > *, .photo-head > * { min-width: 0; }
+.tabs { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button { white-space: nowrap; flex: none; }
+.admin-nav button { white-space: nowrap; }
+.lb-name { font-weight: 500; }
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .m-hide { display: none !important; }
+  .m-only { display: block !important; }
+  .table { font-size: 13.5px; }
+  .table th, .table td { padding: 11px 10px; }
+  .page-head { padding: 40px 0 24px; }
+  .panel-pad { padding: 18px; }
+  .live-left { padding: 22px; }
+  .live-prize { gap: 20px; }
+  .h2 { font-size: 26px; }
+  .hero { min-height: 0; }
+  .hero-inner { padding-top: 40px; }
+  .hero-cta .btn { width: 100%; }
+  .dash-head { padding-top: 32px; }
+  .dash-head h1 { font-size: 24px !important; }
+  .stat .value { font-size: 22px; }
+  .comp-photo { margin: -18px -18px 16px; }
+  .comp-meta { grid-template-columns: 1fr 1fr; }
+  .podium { gap: 8px; }
+  .pod-1 .pod-bar { height: 96px; } .pod-2 .pod-bar { height: 70px; } .pod-3 .pod-bar { height: 52px; }
+  .video { min-height: 220px; }
+  .lessons { padding: 18px; }
+  .tb-text { padding: 22px; }
+  .trader-band > img { min-height: 220px; max-height: 260px; }
+  .photo-head img { height: 180px; }
+  .admin-nav { display: flex; gap: 4px; }
+  .footer .cols { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer .cols > div:first-child { grid-column: 1 / -1; }
+  .demo-banner { font-size: 12px; padding: 7px 12px; }
+  .modal { padding: 18px; }
+  .crypto-box { flex-direction: column; align-items: flex-start; }
+  .cta { padding: 24px 0; }
+  .split-head .btn { width: 100%; }
+  .tier-card .display { font-size: 30px; }
+  .auth { padding-top: 32px; }
+  .auth-card { padding: 22px; }
+}
+@media (max-width: 640px) {
+  .tour-dock .tour-img, .tour-dock .checks { display: none; }
+  .tour-dock .tour-body { padding: 16px 18px 14px; }
+  .tour-dock .tour-body h2 { font-size: 18px; }
+  .tour-dock .tour-body p { font-size: 14px; margin-bottom: 12px; }
+  .tour-center .tour-img { height: 120px; }
+}

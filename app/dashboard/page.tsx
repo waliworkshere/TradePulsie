@@ -64,13 +64,13 @@ export default function Dashboard() {
           <div style={{ padding: "18px 20px", borderBottom: "1px solid var(--line)" }}><h2 className="h3" style={{ margin: 0 }}>Trade history</h2></div>
           <div className="table-wrap">
             <table className="table">
-              <thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Size</th><th className="num">Open</th><th className="num">Close</th><th className="num">Profit</th></tr></thead>
+              <thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th className="m-hide">Size</th><th className="num m-hide">Open</th><th className="num m-hide">Close</th><th className="num">Profit</th></tr></thead>
               <tbody>
                 {myTrades.map((t) => (
                   <tr key={t.id}>
                     <td className="dim">{t.time}</td><td><b style={{ fontWeight: 500 }}>{t.symbol}</b></td>
-                    <td className={t.side === "Buy" ? "up" : "down"}>{t.side}</td><td>{t.size}</td>
-                    <td className="num">{t.open}</td><td className="num">{t.close}</td>
+                    <td className={t.side === "Buy" ? "up" : "down"}>{t.side}</td><td className="m-hide">{t.size}</td>
+                    <td className="num m-hide">{t.open}</td><td className="num m-hide">{t.close}</td>
                     <td className={`num ${t.pnl >= 0 ? "up" : "down"}`}>{t.pnl >= 0 ? "+" : "−"}${Math.abs(t.pnl).toFixed(2)}</td>
                   </tr>
                 ))}
