@@ -4,6 +4,8 @@ All-in-one trading platform: free monthly trading competitions on broker demo ac
 
 Built by **FullCircleWali** for TradePulsie. The source code, database and domain belong to the client.
 
+Live preview: https://tradepulsie.vercel.app
+
 ## Status
 This is the **preview build** (phase 1: design and user journeys). Data is sample data.
 
