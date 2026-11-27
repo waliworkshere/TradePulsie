@@ -5,9 +5,12 @@ import { equityCurve, myTrades, competitions, achievements, courses } from "@/li
 export const metadata = { title: "Dashboard · TradePulsie" };
 
 export default function Dashboard() {
-  const curve = equityCurve(60, 10000, 7);
-  const equity = curve[curve.length - 1];
-  const pnl = equity - 10000;
+  // Scale the sample curve so it ends at this trader's real equity (balance + open profit)
+  const raw = equityCurve(60, 10000, 7);
+  const target = 10553.5;
+  const k = (target - 10000) / (raw[raw.length - 1] - 10000);
+  const curve = raw.map((v) => Math.round((10000 + (v - 10000) * k) * 100) / 100);
+  const equity = target;
   return (
     <div className="wrap" style={{ paddingBottom: 40 }}>
       <div className="page-head dash-head">
@@ -25,7 +28,7 @@ export default function Dashboard() {
 
       <div className="grid-4">
         <div className="panel panel-pad stat"><div className="label">Balance</div><div className="value">$10,497.00</div><div className="delta up">+$497.00 this competition</div></div>
-        <div className="panel panel-pad stat"><div className="label">Equity</div><div className="value">${equity.toLocaleString()}.00</div><div className={`delta ${pnl >= 0 ? "up" : "down"}`}>{pnl >= 0 ? "+" : ""}{(pnl / 100).toFixed(2)}% all time</div></div>
+        <div className="panel panel-pad stat"><div className="label">Equity</div><div className="value">${equity.toLocaleString("en-US", { minimumFractionDigits: 2 })}</div><div className="delta up">+5.54% including open trade</div></div>
         <div className="panel panel-pad stat"><div className="label">Open profit and loss</div><div className="value up">+$56.50</div><div className="delta dim">1 open position</div></div>
         <div className="panel panel-pad stat"><div className="label">Max drawdown</div><div className="value">1.9%</div><div className="delta dim">Limit 10% · Daily limit 5%</div></div>
       </div>
